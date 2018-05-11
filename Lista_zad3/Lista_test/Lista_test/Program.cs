@@ -1,5 +1,10 @@
-﻿//Maciej Dudek
-//indeks: 299186
+//////////////////////////////
+//  Programowanie Obiektowe //
+//  Maciej Tomasz Dudek     //
+//  Nr. indeksu 299168      //
+//  Pracownia 3             //
+//  Zadanie 1-Lista(test)   //
+//////////////////////////////
 using System;
 using Lista;
 
