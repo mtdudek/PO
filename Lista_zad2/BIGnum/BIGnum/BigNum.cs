@@ -1,5 +1,10 @@
-﻿//Maciej Dudek
-//indeks: 299186
+//////////////////////////////
+//  Programowanie Obiektowe //
+//  Maciej Tomasz Dudek     //
+//  Nr. indeksu 299168      //
+//  Pracownia 2             //
+//  Zadanie 1-BigNum        //
+//////////////////////////////
 using System;
 using System.Collections.Generic;
 using System.Text;
