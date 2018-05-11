@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Graf">
+      <HintPath>..\..\Graf\Graf\bin\Release\Graf.dll</HintPath>
+    </Reference>
+    <Reference Include="Slownik">
+      <HintPath>..\..\..\Lista_zad3\Slownik\Slownik\bin\Debug\Slownik.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

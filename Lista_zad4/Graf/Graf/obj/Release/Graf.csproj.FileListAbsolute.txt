@@ -1,0 +1,9 @@
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Graf\Graf\bin\Release\Graf.dll
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Graf\Graf\bin\Release\Graf.pdb
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Graf\Graf\bin\Release\Slownik.dll
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Graf\Graf\bin\Release\Slownik.pdb
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Graf\Graf\obj\Release\Graf.csprojResolveAssemblyReference.cache
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Graf\Graf\obj\Release\Graf.csproj.CoreCompileInputs.cache
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Graf\Graf\obj\Release\Graf.csproj.CopyComplete
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Graf\Graf\obj\Release\Graf.dll
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Graf\Graf\obj\Release\Graf.pdb

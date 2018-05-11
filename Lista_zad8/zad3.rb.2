@@ -1,0 +1,59 @@
+class Jawna
+ def initialize(tekst)
+  @tekst=tekst
+  @roz = tekst.size
+  end
+ def zaszyfruj(kod)
+  r =Random.new(kod)
+  arry1=Array.new()
+  arry2=Array.new()
+  ('a'..'z').each{
+	|x|
+	arry1.push(x)
+	arry2.push(x)
+  }
+  arry2=arry2.shuffle(random: r)
+  slow= Hash.new()
+  0.upto(26) do |x|
+   slow[arry1[x]]=arry2[x]
+  end
+  tekst_u=String.new()
+  0.upto(@roz -1 ) do |x|
+   tekst_u << slow[@tekst[x]]
+  end
+  Zaszyfrowane.new(tekst_u)
+ end
+ def tekst()
+  print @tekst
+ end
+end
+
+class Zaszyfrowane
+ def initialize(tekst)
+  @tekst=tekst
+  @roz = tekst.size
+  end
+ def odszyfruj(kod)
+  r =Random.new(kod)
+  arry1=Array.new()
+  arry2=Array.new()
+  ('a'..'z').each{
+	|x|
+	arry1.push(x)
+	arry2.push(x)
+  }
+  arry2.shuffle(random: r)
+  slow= Hash.new()
+  0.upto(26) do |x|
+    slow[arry2[x]]=arry1[x]
+    end
+  teskt_j = String.new(@roz)
+  0.upto(@roz - 1) do |x|
+    teskt_j[x]=slow[@tekst[x]]
+  end
+  Jawna(tekst_j)
+ end
+ def tekst()
+  print @tekst
+ end
+end

@@ -1,0 +1,12 @@
+C:\Users\User\Desktop\PO\Lista_zad3\Slownik\Slownik\bin\Debug\Slownik.dll
+C:\Users\User\Desktop\PO\Lista_zad3\Slownik\Slownik\bin\Debug\Slownik.pdb
+C:\Users\User\Desktop\PO\Lista_zad3\Slownik\Slownik\obj\Debug\Slownik.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\PO\Lista_zad3\Slownik\Slownik\obj\Debug\Slownik.dll
+C:\Users\User\Desktop\PO\Lista_zad3\Slownik\Slownik\obj\Debug\Slownik.pdb
+C:\Users\User\Desktop\PO\Lista_zad3\Slownik\Slownik\obj\Debug\Slownik.csprojResolveAssemblyReference.cache
+C:\Users\Maciej\Desktop\PO\Lista_zad3\Slownik\Slownik\obj\Debug\Slownik.csprojResolveAssemblyReference.cache
+C:\Users\Maciej\Desktop\PO\Lista_zad3\Slownik\Slownik\obj\Debug\Slownik.csproj.CoreCompileInputs.cache
+C:\Users\Maciej\Desktop\PO\Lista_zad3\Slownik\Slownik\obj\Debug\Slownik.dll
+C:\Users\Maciej\Desktop\PO\Lista_zad3\Slownik\Slownik\obj\Debug\Slownik.pdb
+C:\Users\Maciej\Desktop\PO\Lista_zad3\Slownik\Slownik\bin\Debug\Slownik.dll
+C:\Users\Maciej\Desktop\PO\Lista_zad3\Slownik\Slownik\bin\Debug\Slownik.pdb

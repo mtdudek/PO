@@ -1,0 +1,11 @@
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Prime_Colection\Prime_Colection\bin\Debug\netcoreapp2.0\Prime_Collection.deps.json
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Prime_Colection\Prime_Colection\bin\Debug\netcoreapp2.0\Prime_Collection.runtimeconfig.json
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Prime_Colection\Prime_Colection\bin\Debug\netcoreapp2.0\Prime_Collection.runtimeconfig.dev.json
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Prime_Colection\Prime_Colection\bin\Debug\netcoreapp2.0\Prime_Collection.dll
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Prime_Colection\Prime_Colection\bin\Debug\netcoreapp2.0\Prime_Collection.pdb
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Prime_Colection\Prime_Colection\obj\Debug\netcoreapp2.0\Prime_Collection.csprojResolveAssemblyReference.cache
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Prime_Colection\Prime_Colection\obj\Debug\netcoreapp2.0\Prime_Collection.csproj.CoreCompileInputs.cache
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Prime_Colection\Prime_Colection\obj\Debug\netcoreapp2.0\Prime_Collection.AssemblyInfoInputs.cache
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Prime_Colection\Prime_Colection\obj\Debug\netcoreapp2.0\Prime_Collection.AssemblyInfo.cs
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Prime_Colection\Prime_Colection\obj\Debug\netcoreapp2.0\Prime_Collection.dll
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Prime_Colection\Prime_Colection\obj\Debug\netcoreapp2.0\Prime_Collection.pdb

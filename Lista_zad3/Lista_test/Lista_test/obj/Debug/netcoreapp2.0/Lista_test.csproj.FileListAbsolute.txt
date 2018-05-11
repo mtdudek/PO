@@ -1,0 +1,14 @@
+C:\Users\User\Desktop\PO\Lista_zad3\Lista_test\Lista_test\obj\Debug\netcoreapp2.0\Lista_test.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\PO\Lista_zad3\Lista_test\Lista_test\obj\Debug\netcoreapp2.0\Lista_test.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\PO\Lista_zad3\Lista_test\Lista_test\obj\Debug\netcoreapp2.0\Lista_test.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\PO\Lista_zad3\Lista_test\Lista_test\obj\Debug\netcoreapp2.0\Lista_test.AssemblyInfo.cs
+C:\Users\User\Desktop\PO\Lista_zad3\Lista_test\Lista_test\bin\Debug\netcoreapp2.0\Lista_test.deps.json
+C:\Users\User\Desktop\PO\Lista_zad3\Lista_test\Lista_test\bin\Debug\netcoreapp2.0\Lista_test.runtimeconfig.json
+C:\Users\User\Desktop\PO\Lista_zad3\Lista_test\Lista_test\bin\Debug\netcoreapp2.0\Lista_test.runtimeconfig.dev.json
+C:\Users\User\Desktop\PO\Lista_zad3\Lista_test\Lista_test\bin\Debug\netcoreapp2.0\Lista_test.dll
+C:\Users\User\Desktop\PO\Lista_zad3\Lista_test\Lista_test\bin\Debug\netcoreapp2.0\Lista_test.pdb
+C:\Users\User\Desktop\PO\Lista_zad3\Lista_test\Lista_test\bin\Debug\netcoreapp2.0\Lista.dll
+C:\Users\User\Desktop\PO\Lista_zad3\Lista_test\Lista_test\bin\Debug\netcoreapp2.0\Lista.pdb
+C:\Users\User\Desktop\PO\Lista_zad3\Lista_test\Lista_test\obj\Debug\netcoreapp2.0\Lista_test.csproj.CopyComplete
+C:\Users\User\Desktop\PO\Lista_zad3\Lista_test\Lista_test\obj\Debug\netcoreapp2.0\Lista_test.dll
+C:\Users\User\Desktop\PO\Lista_zad3\Lista_test\Lista_test\obj\Debug\netcoreapp2.0\Lista_test.pdb

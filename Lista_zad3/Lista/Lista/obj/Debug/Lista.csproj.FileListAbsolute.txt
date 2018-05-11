@@ -1,0 +1,6 @@
+C:\Users\User\Desktop\PO\Lista_zad3\Lista\Lista\bin\Debug\Lista.dll
+C:\Users\User\Desktop\PO\Lista_zad3\Lista\Lista\bin\Debug\Lista.pdb
+C:\Users\User\Desktop\PO\Lista_zad3\Lista\Lista\obj\Debug\Lista.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\PO\Lista_zad3\Lista\Lista\obj\Debug\Lista.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\PO\Lista_zad3\Lista\Lista\obj\Debug\Lista.dll
+C:\Users\User\Desktop\PO\Lista_zad3\Lista\Lista\obj\Debug\Lista.pdb

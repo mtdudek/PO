@@ -1,0 +1,47 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.0",
+    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.0": {
+      "Graf_test/1.0.0": {
+        "dependencies": {
+          "Graf": "1.0.0.0",
+          "Slownik": "1.0.0.0"
+        },
+        "runtime": {
+          "Graf_test.dll": {}
+        }
+      },
+      "Graf/1.0.0.0": {
+        "runtime": {
+          "Graf.dll": {}
+        }
+      },
+      "Slownik/1.0.0.0": {
+        "runtime": {
+          "Slownik.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Graf_test/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Graf/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Slownik/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

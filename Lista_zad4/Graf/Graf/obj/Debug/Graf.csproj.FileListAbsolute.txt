@@ -1,0 +1,9 @@
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Graf\Graf\bin\Debug\Graf.dll
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Graf\Graf\bin\Debug\Graf.pdb
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Graf\Graf\bin\Debug\Slownik.dll
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Graf\Graf\bin\Debug\Slownik.pdb
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Graf\Graf\obj\Debug\Graf.csprojResolveAssemblyReference.cache
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Graf\Graf\obj\Debug\Graf.csproj.CoreCompileInputs.cache
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Graf\Graf\obj\Debug\Graf.csproj.CopyComplete
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Graf\Graf\obj\Debug\Graf.dll
+C:\Users\Maciej\Desktop\PO\Lista_zad4\Graf\Graf\obj\Debug\Graf.pdb

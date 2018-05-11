@@ -1,0 +1,11 @@
+C:\Users\User\source\repos\BIGnum\BIGnum\bin\Debug\netcoreapp2.0\BIGnum.deps.json
+C:\Users\User\source\repos\BIGnum\BIGnum\bin\Debug\netcoreapp2.0\BIGnum.runtimeconfig.json
+C:\Users\User\source\repos\BIGnum\BIGnum\bin\Debug\netcoreapp2.0\BIGnum.runtimeconfig.dev.json
+C:\Users\User\source\repos\BIGnum\BIGnum\bin\Debug\netcoreapp2.0\BIGnum.dll
+C:\Users\User\source\repos\BIGnum\BIGnum\bin\Debug\netcoreapp2.0\BIGnum.pdb
+C:\Users\User\source\repos\BIGnum\BIGnum\obj\Debug\netcoreapp2.0\BIGnum.csprojResolveAssemblyReference.cache
+C:\Users\User\source\repos\BIGnum\BIGnum\obj\Debug\netcoreapp2.0\BIGnum.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\BIGnum\BIGnum\obj\Debug\netcoreapp2.0\BIGnum.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\BIGnum\BIGnum\obj\Debug\netcoreapp2.0\BIGnum.AssemblyInfo.cs
+C:\Users\User\source\repos\BIGnum\BIGnum\obj\Debug\netcoreapp2.0\BIGnum.dll
+C:\Users\User\source\repos\BIGnum\BIGnum\obj\Debug\netcoreapp2.0\BIGnum.pdb

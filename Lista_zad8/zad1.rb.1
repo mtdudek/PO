@@ -1,0 +1,37 @@
+class Fixnum
+  def czynniki
+    arry1=Array.new()
+    1.upto(self) do |x|
+      if self%x==0
+        arry1.push(x)
+      end
+    end
+    arry1
+  end
+  def ack(m)
+    if self == 0
+      m+1
+    elsif m==0
+      (self -1).ack(1)
+    else
+      (self -1).ack(self.ack(m-1))
+    end 
+  end
+  def doskonala
+    dzi=Array.new()
+    dzi=self.czynniki
+    dzi.pop
+    i=0
+    dzi.each{|x| i+=x}
+    i == self
+  end
+  def slownie
+    slowaspecjalne = {
+      0 => "zero", 1 => "jeden", 2 => "dwa", 3 => "trzy", 4 => "cztery",
+      5 => "piec", 6 => "szesc", 7 => "siedem", 8 => "osiem", 9 => "dziwiec",
+      10 => "dziesiec", 11 => "jedynascie", 12 => "dwanascie",
+      13 => "trzynacie", 14 => "czternacie", 15 => "pietnascie",
+      16 => "szesnacie", 17 => "siedemnascie", 18 => "osiemnascie",
+      19 => "dziewietnascie"}
+  end
+end

@@ -1,0 +1,116 @@
+import java.io.*;
+import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Program {
+	
+	static String getFileExtension(File file) {
+	    String name = file.getName();
+	    try {
+	        return name.substring(name.lastIndexOf(".") + 1);
+	    } catch (Exception e) {
+	        return "";
+	    }
+	}
+	
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+    	String path="";
+    	JFrame frame=new JFrame("Menu");
+    	frame.setVisible(false);
+    	frame.setPreferredSize(new Dimension(400,200));
+    	Container kontener=frame.getContentPane();
+    	GridLayout wyglad=new GridLayout(3,1);
+    	kontener.setLayout(wyglad);
+    	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    	JFileChooser chooser = new JFileChooser();
+        FileNameExtensionFilter filter1 = new FileNameExtensionFilter(
+            "Samocjody", "car"),
+        						filter2 = new FileNameExtensionFilter(
+        	"Tramwaj", "tram");
+        chooser.addChoosableFileFilter(filter1);
+        chooser.addChoosableFileFilter(filter2);
+        JButton Czytaj = new JButton("Czytaj plik");
+        Czytaj.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int returnVal = chooser.showOpenDialog(frame);
+                if(returnVal == JFileChooser.APPROVE_OPTION) {
+                	String path;
+                	path=chooser.getSelectedFile().getAbsolutePath();
+            		try {
+						deserializacja(path);
+					} catch (ClassNotFoundException e1) {
+						e1.printStackTrace();
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					}
+                }
+                frame.setVisible(false);
+            }
+        });
+        kontener.add(Czytaj);
+        JButton No_sam = new JButton("Nowy Samochód");
+        No_sam.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            }
+        });
+        kontener.add(No_sam);
+        JButton No_tra= new JButton("Nowy Tramwaj");
+        No_tra.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            }
+        });
+        frame.pack();
+        kontener.add(No_tra);
+        if (args.length == 0) {
+        	frame.setVisible(true);
+        }
+        else if(args.length>0)
+        	path=args[0];
+        File file = new File(path);
+        String ex=getFileExtension(file);
+        if (file.isFile()) {
+        	if(ex.compareTo("car")==0||ex.compareTo("tram")==0)
+        		deserializacja(path);
+        	else {
+        		System.out.println("ZŁA ŚCIERZKA!!!");
+        	}
+        }
+        else if(args.length>1&&args[1].compareTo("Samochod")==0&&ex.compareTo("tram")!=0) {
+        	Samochod car = new Samochod();
+            EdycjaSamochodu edycja = new EdycjaSamochodu(car);
+            if (ex.compareTo("car")!=0)
+            	path+=".car";
+            edycja.edycja(path);
+        }
+        else if (args.length>1&&args[1].compareTo("Tramwaj")==0&&ex.compareTo("car")!=0) {
+        	Tramwaj tram = new Tramwaj();
+        	EdycjaTramwaju edycja = new EdycjaTramwaju(tram);
+            if (ex.compareTo("tram")!=0)
+            	path+=".tram";
+        	edycja.edycja(path);
+        }
+    }
+
+    public static void deserializacja(String path) throws IOException, ClassNotFoundException {
+        File file = new File(path);
+        String ex=getFileExtension(file);
+        ObjectInputStream input = new ObjectInputStream( new BufferedInputStream( new FileInputStream(path)));
+        if(ex.compareTo("car")==0) {
+            Samochod car = (Samochod)input.readObject();
+            EdycjaSamochodu edycja = new EdycjaSamochodu(car);
+            edycja.edycja(path);
+        }
+        else {
+            Tramwaj tram = (Tramwaj)input.readObject();
+            EdycjaTramwaju edycja = new EdycjaTramwaju(tram);
+            edycja.edycja(path);
+        }
+        input.close();
+    }
+}
