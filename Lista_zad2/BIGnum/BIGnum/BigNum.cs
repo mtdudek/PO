@@ -14,12 +14,14 @@ namespace BIGnum
     public class BigNum{
         protected ulong[] BigNum_ary;
         public string MaxVal,MinVal;
+
         public BigNum(){
             this.BigNum_ary = new ulong[64];
             Array.Clear(this.BigNum_ary, 0, this.BigNum_ary.Length);
             this.MaxVal = "(2^4095)-1";
             this.MinVal = "(-2^4095)+1";
         }
+
         public BigNum(int a){
             this.BigNum_ary = new ulong[64];
             Array.Clear(this.BigNum_ary, 0, this.BigNum_ary.Length);
@@ -33,6 +35,7 @@ namespace BIGnum
             this.MaxVal = "(2^4095)-1";
             this.MinVal = "(-2^4095)+1";
         }
+
         public BigNum(ulong[] ary){
             this.BigNum_ary = new ulong[64];
             Array.Clear(this.BigNum_ary, 0, this.BigNum_ary.Length);
@@ -42,6 +45,7 @@ namespace BIGnum
             this.MaxVal = "(2^4095)-1";
             this.MinVal = "(-2^4095)+1";
         }
+
         public BigNum(BigNum A){
             this.BigNum_ary = new ulong[64];
             Array.Clear(this.BigNum_ary, 0, this.BigNum_ary.Length);
@@ -51,19 +55,23 @@ namespace BIGnum
             this.MaxVal = "(2^4095)-1";
             this.MinVal = "(-2^4095)+1";
         }
+
         public void Set_MaxVal(){
             for (int i = 0; i < 64; i++)
                 this.BigNum_ary[i] |= 0xFFFFFFFFFFFFFFFF;
             this.BigNum_ary[63] &= 0x7FFFFFFFFFFFFFFF;
         }
+
         public void Set_MinVal(){
             for (int i = 0; i < 64; i++) this.BigNum_ary[i] = 0;
             this.BigNum_ary[63] = 0x8000000000000000;
             this.BigNum_ary[0] = 1;
         }
+
         public void Put(int a){
             Console.WriteLine(this.BigNum_ary[a]);
         }
+
         public void Add_One(){
             bool carry_over = true;
             for (int i = 0; (i < 64) && carry_over; i++){
@@ -78,6 +86,7 @@ namespace BIGnum
                 this.BigNum_ary[i] = temp;                   
             }
         }
+
         public void Shift_Right_Once (){
             this.BigNum_ary[0] >>= 1;
             for(int i = 1; i <64; i++){
@@ -85,6 +94,7 @@ namespace BIGnum
                 this.BigNum_ary[i] >>= 1;
             }
         }
+
         public void Shift_Left_Once (){
             this.BigNum_ary[63] <<= 1;
             for (int i = 62; i >= 0; i--){
@@ -92,12 +102,14 @@ namespace BIGnum
                 this.BigNum_ary[i] <<= 1;
             }
         }
+
         public void Neg(){
             for (int i = 0; i < 64; i++){
                 this.BigNum_ary[i] = ~this.BigNum_ary[i];
             }
             this.Add_One();
         }
+
         public bool Greater_Than_Zero(){
             if (this.Is_Negative()) return false;
             for (int i = 0; i < 64; i++){
@@ -106,12 +118,14 @@ namespace BIGnum
             }
             return false;
         }
+
         public bool Is_Negative(){
             ulong mask = 0x8000000000000000;
             if ( (mask & this.BigNum_ary[63]) == mask)
                 return true;
             return false;
         }
+
         public void Print(){
             bool neg = false;
             BigNum T = new BigNum(this);
@@ -158,6 +172,7 @@ namespace BIGnum
             t2.ForEach(i => Console.Write("{0}", i));
             Console.WriteLine();
         }
+
         public void Binary_Dump(){
             BigNum T = new BigNum(this);
             while (T.Greater_Than_Zero()){
@@ -167,6 +182,7 @@ namespace BIGnum
             }
             Console.WriteLine();
         }
+
         public int Last_Bit_Pos(){
             int i = 63, k = 63;
             while (this.BigNum_ary[i] == 0) i--;
@@ -177,6 +193,7 @@ namespace BIGnum
             }
             return 64 * i + k;
         }
+
         public static BigNum operator+ (BigNum A,BigNum B){
             bool carry_over = false,
                  last_carry = false;
@@ -196,6 +213,7 @@ namespace BIGnum
             }
             return new BigNum(t.BigNum_ary);
         }
+
         public static BigNum operator- (BigNum A,BigNum B){
             BigNum T = new BigNum(B);
             for (int i = 0; i < 64; i++)
@@ -203,6 +221,7 @@ namespace BIGnum
             T.Add_One();
             return A + T;
         }
+
         public static BigNum operator* (BigNum A,BigNum B){
             BigNum  t = new BigNum();
             BigNum t1 = new BigNum(A),
@@ -227,6 +246,7 @@ namespace BIGnum
                 t.Neg();
             return t;
         }
+
         public static BigNum operator/ (BigNum A,BigNum B){
             BigNum L1 = new BigNum(1),
                    t1 = new BigNum(A),

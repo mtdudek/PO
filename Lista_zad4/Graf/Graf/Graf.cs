@@ -1,9 +1,10 @@
-﻿// Maciej Dudek
-// Pracownia PO, czwartek, s.108
-// L4, z1 Słownik
-// Słownik_test
-// Słownik.dll
-// 2018-04-12
+﻿//////////////////////////////
+//  Programowanie Obiektowe //
+//  Maciej Tomasz Dudek     //
+//  Nr. indeksu 299168      //
+//  Pracownia 4             //
+//  Zadanie 3-Graf          //
+//////////////////////////////
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,21 +15,30 @@ using Slownik;
 namespace Graf
 {
     //Interfejs grafowy
+
     public interface  graf_interface{
+
         //Dodaj wierzchołek fo grafu
         void Dodaj_wierzchołek(string a);
+
         //Sprawdza czy wierzchołek jest w grafie
         bool Czy_jest_wierzchołek(string a);
+
         //Usuwa wierzchołek z grafu
         void Usun_wierzchołek(string a);
+
         //Dodaje krawędź z wagą
         void Dodaj_krawędź_z_wagą(string a, string b, int c);
+
         //Sprawdza czy jest krawędź między wierzchołkami
         bool Czy_jest_krawędź(string a,string b);
+
         //Usuwa krawędź z grafu
         void Usun_krawędź(string a, string b);
+
         //Resetuje na której krawędź jest wierzchołek 
         void Resetuj_krawędź(string a);
+
         //Udąstępnia następną krawędź
         kra Kolejna_krawędź(string a);
     }
@@ -36,42 +46,51 @@ namespace Graf
     public class kra{
         int weight;
         string dest;
+
         public kra(int a,string b){
             weight = new int();
             weight = a;
             dest = new string(b.ToCharArray());
         }
+
         //Udostępnia wagę krawędzi
         public int get_weigth(){
             return weight;
         }
+
         //Udostępnia koniec krawędzi
         public string get_dest(){
             return dest;
         }
     }
+
     //Klasa pomocnicza do generatora grafu
     public class triple{
         string a, b;
         int c;
+
         public triple(string _a,string _b,int _c){
             a = new string(_a.ToCharArray());
             b = new string(_b.ToCharArray());
             c = _c;
         }
+
         //Udostępnia pierwszy z konców krawędzi
         public string get_a(){
             return a;
         }
+
         //Udostępnia drugi z końców krawędzi
         public string get_b(){
             return b;
         }
+
         //Udostępnia wagę krawędzi
         public int get_c(){
             return c;
         }
     }
+
     //Obiekt do twirzenia losowych grafów
     public class Graf_random_gen{
         string[] wierzchołki;
@@ -79,6 +98,7 @@ namespace Graf
         int w_s,k_s,index1, index2;
         Slownik<int, string> i_s;
         Slownik<int, Slownik<int,bool>> s;
+
         //Generator stringów 
         string String_gen(){
             string chars =  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmn"+
@@ -90,6 +110,7 @@ namespace Graf
                 stringChars[i] = chars[random.Next(chars.Length)];
             return new String(stringChars);
         }
+
         //Konstruktor
         public Graf_random_gen(int w,int k){
             w_s = w;
@@ -136,6 +157,7 @@ namespace Graf
                 }
             }
         }
+
         //Następny wierzchołek z grafu
         public string Nastepny_wierzchołek(){
             index1++;
@@ -143,6 +165,7 @@ namespace Graf
                 throw new System.ArgumentException();
             return wierzchołki[index1];
         }
+
         //Następna krawędź z grafu
         public triple Nastepna_krawedz(){
             index2++;
@@ -150,15 +173,18 @@ namespace Graf
                 throw new System.ArgumentException();
             return krawedzie[index2];
         }
+
         //Resetuje wypisywanie wierzchołków
         public void Reset_wie(){
             index1 = -1;
         }
+
         //Resetuje wypisywanie krawędzi
         public void Reset_kraw(){
             index2 = -1;
         }
     }
+
     //Implementacja grafu jako macierzy sąsiedztwa
     public class Graf1 : graf_interface{
         Slownik<string,int> Sl1;
@@ -166,6 +192,7 @@ namespace Graf
         int liczba_wierz;
         int[,] actual_tab, old_tab;
         int[] act_kra,old_kra;
+
         public Graf1(){
             liczba_wierz = new int();
             liczba_wierz = 0;
@@ -174,6 +201,7 @@ namespace Graf
             Sl1 = new Slownik<string, int>();
             Sl2 = new Slownik<int, string>();
         }
+
         public Graf1(string[] k){
             liczba_wierz = new int();
             liczba_wierz = k.Length;
@@ -188,6 +216,7 @@ namespace Graf
             }
 
         }
+
         public void Dodaj_wierzchołek(string a){
             if (Czy_jest_wierzchołek(a))
                 throw new System.ArgumentException("Już instnieje");
@@ -205,6 +234,7 @@ namespace Graf
                 act_kra[i] = old_kra[i];
             act_kra[liczba_wierz - 1] = -1;
         }
+
         public bool Czy_jest_wierzchołek(string a){
             bool n = new bool();
             n = true;
@@ -215,6 +245,7 @@ namespace Graf
             }
             return n;
         }
+
         public void Usun_wierzchołek(string a){
             int g;
             if (Czy_jest_wierzchołek(a)){
@@ -267,6 +298,7 @@ namespace Graf
                 }
             }
         }
+
         public void Dodaj_krawędź_z_wagą(string a, string b, int c){
             if (!Czy_jest_wierzchołek(a) || !Czy_jest_wierzchołek(b))
                 throw new System.ArgumentException("Któryś z wierzchołków" +
@@ -290,11 +322,13 @@ namespace Graf
             actual_tab[Sl1.znajdz_element_z_kluczem(a),
                        Sl1.znajdz_element_z_kluczem(b)]= 0;
         }
+
         public void Resetuj_krawędź(string a){
             if (!Czy_jest_wierzchołek(a))
                 throw new System.ArgumentException("Wierzchołek nie istnieje");
             act_kra[Sl1.znajdz_element_z_kluczem(a)] = -1;
         }
+
         public kra Kolejna_krawędź(string a){
             if (!Czy_jest_wierzchołek(a))
                 throw new System.ArgumentException("Wierzchołek nie istnieje");
@@ -310,6 +344,7 @@ namespace Graf
             return new kra(actual_tab[u,j],Sl2.znajdz_element_z_kluczem(j));
         }
     }
+
     //Implementacja grafu jako obiektów "Wierzchołek"
     //z krawędziami do swoich sąsiadów
     public class Graf2:graf_interface{
@@ -318,6 +353,7 @@ namespace Graf
             kra[] tab;
             int index,size;
             internal string name;
+
             internal Vertix(string name_){
                 index = new int();
                 size = new int();
@@ -326,6 +362,7 @@ namespace Graf
                 tab = new kra[size];
                 name = new string(name_.ToCharArray());
             }
+
             //Usuń ścierzkę do wieszchołka
             internal void delete_path(string a){
                 kra[] tab_old = tab;
@@ -348,6 +385,7 @@ namespace Graf
                     }
                 }
             }
+
             //Dodaj ścierzkę
             internal void add_path(kra d){
                 kra[] tab_old = tab;
@@ -357,6 +395,7 @@ namespace Graf
                     tab[i] = tab_old[i];
                 tab[size - 1] = d;
             }
+
             //Sprawdza czy isnieje ścieżka
             internal bool is_path(string a){
                 for (int i = 0; i < size; i++)
@@ -364,10 +403,12 @@ namespace Graf
                         return true;
                 return false;
             }
+
             //Resetuje przeszukiwanie ścierzek
             internal void reset_path(){
                 index = -1;
             }
+
             //Zwraca następną ścierzkę
             internal kra next_path(){
                 index++;
@@ -379,12 +420,14 @@ namespace Graf
         Slownik<string,Vertix> S;
         Slownik<int, Vertix> Si;
         int liczba_wierz;
+
         public Graf2(){
             S = new Slownik<string, Vertix>();
             Si = new Slownik<int, Vertix>();
             liczba_wierz = new int();
             liczba_wierz = 0;
         }
+
         public void Dodaj_wierzchołek(string a){
             if (Czy_jest_wierzchołek(a))
                 throw new System.ArgumentException("Wierzchołek istnieje");
@@ -393,6 +436,7 @@ namespace Graf
             Si.dodaj_element_z_kluczem(liczba_wierz, n);
             liczba_wierz++;
         }
+
         public bool Czy_jest_wierzchołek(string a){
             bool n = new bool();
             n = true;
@@ -400,6 +444,7 @@ namespace Graf
             catch{n = false;}
             return n;
         }
+
         public void Usun_wierzchołek(string a){
             if (!Czy_jest_wierzchołek(a))
                 throw new System.ArgumentException("Wierzchołek nie istnieje");
@@ -421,29 +466,34 @@ namespace Graf
             }
             liczba_wierz--;
         }
+
         public void Dodaj_krawędź_z_wagą(string a, string b, int c){
             if (!Czy_jest_wierzchołek(a) || !Czy_jest_wierzchołek(b))
                 throw new System.ArgumentException("Któryś z wierzchołków" +
                                                    " nie isnieje");
             S.znajdz_element_z_kluczem(a).add_path(new kra(c, b));
         }
+
         public bool Czy_jest_krawędź(string a, string b){
             if (!Czy_jest_wierzchołek(a) || !Czy_jest_wierzchołek(b))
                 throw new System.ArgumentException("Któryś z wierzchołków" +
                                                    " nie isnieje");
             return S.znajdz_element_z_kluczem(a).is_path(b);
         }
+
         public void Usun_krawędź(string a, string b){
             if (!Czy_jest_wierzchołek(a) || !Czy_jest_wierzchołek(b))
                 throw new System.ArgumentException("Któryś z wierzchołków" +
                                                    " nie isnieje");
             S.znajdz_element_z_kluczem(a).delete_path(b);
         }
+
         public void Resetuj_krawędź(string a){
             if (!Czy_jest_wierzchołek(a))
                 throw new System.ArgumentException("Wierzchołek nie istnieje");
             S.znajdz_element_z_kluczem(a).reset_path();
         }
+
         public kra Kolejna_krawędź(string a){
             if (!Czy_jest_wierzchołek(a))
                 throw new System.ArgumentException("Wierzchołek nie istnieje");

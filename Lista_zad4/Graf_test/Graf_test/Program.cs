@@ -1,9 +1,10 @@
-﻿// Maciej Dudek
-// Pracownia PO, czwartek, s.108
-// L4, z1 Słownik
-// Słownik_test
-// Słownik.dll
-// 2018-04-12
+﻿//////////////////////////////
+//  Programowanie Obiektowe //
+//  Maciej Tomasz Dudek     //
+//  Nr. indeksu 299168      //
+//  Pracownia 4             //
+//  Zadanie 3-Graf(test)    //
+//////////////////////////////
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace Graf_test
         //k1 - lczba krawędzi
         const int w1 = 3000, k1 = 150000;
         static Graf_random_gen p;
+
         //Dijkstra  
         static void Dijkstra(string start,string koniec,graf_interface graf){
             p.Reset_wie();
@@ -60,6 +62,7 @@ namespace Graf_test
             bylem = null;
             s = null;
         }
+
         static void Main(string[] args)
         {
             p = new Graf_random_gen(w1, k1);

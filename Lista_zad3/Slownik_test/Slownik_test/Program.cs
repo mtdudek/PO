@@ -1,13 +1,15 @@
-﻿// Maciej Dudek
-// Pracownia PO, czwartek, s.108
-// L3, z2 Słownik
-// Słownik_test
-// Słownik_test
-// 2018-03-15
+﻿//////////////////////////////
+//  Programowanie Obiektowe //
+//  Maciej Tomasz Dudek     //
+//  Nr. indeksu 299168      //
+//  Pracownia 3             //
+//  Zadanie 2-Słownik       //
+//////////////////////////////
 using System;
 using Slownik;
 
 namespace Slownik_test{
+
     class Program{
         static void Main(string[] args){
             Slownik<string, int> Sl = new Slownik<string, int>();

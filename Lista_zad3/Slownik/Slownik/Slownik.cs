@@ -1,15 +1,17 @@
-﻿// Maciej Dudek
-// Pracownia PO, czwartek, s.108
-// L3, z2 Słownik
-// Słownik_test
-// Słownik.dll
-// 2018-03-15
+﻿//////////////////////////////
+//  Programowanie Obiektowe //
+//  Maciej Tomasz Dudek     //
+//  Nr. indeksu 299168      //
+//  Pracownia 3             //
+//  Zadanie 2-Słownik       //
+//////////////////////////////
 using System;
 
 namespace Slownik
 {
     public class Slownik<K, V>{
         slowniki<K,V> inter;
+
         // domyślny konstruktor
         public Slownik(){
             string  inte1 = "IComparable",
@@ -24,36 +26,48 @@ namespace Slownik
                 throw new Exception("Obiekty tej klas nie da sie poruwnać.\n" +
                     "Może zapomniałeś dodać " + inte1 + "lub " + inte2);
         }
+
         // dodaj element
         public void dodaj_element_z_kluczem(K key, V val){
             inter.dodaj_element_z_kluczem(key , val);
         }
+
         // znajdź element
         public V znajdz_element_z_kluczem(K k){
             return inter.znajdz_element_z_kluczem(k);
         }
+
         // usuń element
         public void usun_element_z_kluczem(K k){
             inter.usun_element_z_kluczem(k);
         }
+
         // wypisz cały słownik
         public void wypisz_caly_slownik(){
             inter.wypisz_caly_slownik();
         }
+
         // liczba elementów w słowniku
         public void liczba_elementow(){
             inter.liczba_elementow();
         }
+
         public void zmien_wartosc (K key, V val){
             inter.zmien_wartosc(key,val);
         }
     }
     internal abstract class slowniki<K, V>{
-        internal virtual void dodaj_element_z_kluczem(K key, V val) { throw new NotImplementedException(); }
+
+        internal virtual void dodaj_element_z_kluczem(K key, V val) { throw new NotImplementedException();
+        }
         internal virtual V znajdz_element_z_kluczem(K k) { throw new NotImplementedException(); }
+
         internal virtual void usun_element_z_kluczem(K k) { throw new NotImplementedException(); }
+
         internal virtual void wypisz_caly_slownik() { throw new NotImplementedException(); }
+
         internal virtual int liczba_elementow() { throw new NotImplementedException(); }
+
         internal virtual void zmien_wartosc(K key, V val) { throw new NotImplementedException(); }
 
     }
@@ -65,28 +79,33 @@ namespace Slownik
             internal K key;
             internal V val;
             internal Node next;
+
             internal Node(K k, V v){
                 key = k;
                 val = v;
                 next = null;
             }
+
             internal Node(){
                 key = default(K);
                 val = default(V);
                 next = null;
             }
         }
+
         internal slownik_ogokny(){
             size = new int();
             size = 0;
             first = new Node();
             last = first;
         }
+
         internal override void dodaj_element_z_kluczem(K key, V val){
             size++;
             last.next = new Node(key, val);
             last = last.next;
         }
+
         internal override V znajdz_element_z_kluczem(K k){
             Node p = first;
             while (p.next != null){
@@ -96,6 +115,7 @@ namespace Slownik
             }
             throw new System.ArgumentException("Nie ma w słowniku!!!\n");
         }
+
         internal override void zmien_wartosc(K key, V val){
             Node p = first;
             while (p.next != null){
@@ -105,6 +125,7 @@ namespace Slownik
             }
             throw new System.ArgumentException("Nie ma w słowniku!!!\n");
         }
+
         internal override void usun_element_z_kluczem(K k){
             size--;
             Node p = first;
@@ -116,6 +137,7 @@ namespace Slownik
                 p = p.next;
             }
         }
+
         internal override void wypisz_caly_slownik() {
             Node p = first;
             while (p.next != null){
@@ -123,16 +145,19 @@ namespace Slownik
                 Console.WriteLine(p.key.ToString(), p.val.ToString());
             }
         }
+
         internal override int liczba_elementow() {
             return size;
         }
     }
     internal class slownik_czarno_czerwony<K, V> : slowniki<K, V>{
+
         internal class Node{
             internal IComparable<K> key;
             internal V val;
             internal Node Lson,Rson,Parent;
             internal bool black;
+
             internal Node(K k, V v){
 
                 key = (IComparable<K>)k;
@@ -142,6 +167,7 @@ namespace Slownik
                 Rson = null;
                 Parent = null;
             }
+
             internal Node(){
                 key = default(IComparable<K>);
                 val = default(V);
@@ -150,15 +176,18 @@ namespace Slownik
                 Rson = null;
                 Parent = null;
             }
+
             internal Node get_Parent(){
                 return Parent;
             }
+
             internal Node get_Grandparent(){
                 Node t = this.get_Parent();
                 if (t == null)
                     return null;
                 return t.get_Parent();
             }
+
             internal Node get_Sibling(){
                 Node t = this.get_Parent();
                 if (t == null)
@@ -168,6 +197,7 @@ namespace Slownik
                 else
                     return t.Lson;
             }
+
             internal Node get_Uncle(){
                 Node t1 = this.get_Parent(),
                      t2 = this.get_Grandparent();
@@ -175,6 +205,7 @@ namespace Slownik
                     return null;
                 return t1.get_Sibling();
             }
+
             internal void rotate_left(){
                 Node nn = this.Rson;
                 this.Rson = nn.Lson;
@@ -191,6 +222,7 @@ namespace Slownik
                         g.Rson = nn;
                 }
             }
+
             internal void rotate_right(){
                 Node nn = this.Lson;
                 this.Lson = nn.Rson;
@@ -207,6 +239,7 @@ namespace Slownik
                         g.Rson = nn;
                 }
             }
+
             internal void replace(Node n){
                 IComparable<K> t = this.key;
                 this.key = n.key;
@@ -218,11 +251,13 @@ namespace Slownik
         }
         int size;
         Node root;
+
         internal slownik_czarno_czerwony(){
             root = null;
             size = new int();
             size = 0;
         }
+
         private void insert(Node ro,Node n){
             if (ro == null){
                 ro = n;
@@ -244,6 +279,7 @@ namespace Slownik
                 }
             }
         }
+
         private void insert_repair(Node n){
             if (n.get_Parent() == null)
                 insert_c1(n);
@@ -254,12 +290,15 @@ namespace Slownik
             else
                 insert_c4(n);
         }
+
         private void insert_c1(Node n){
             n.black = true;
         }
+
         private void insert_c2(Node n){
             return;
         }
+
         private void insert_c3(Node n){
             n.get_Parent().black = true;
             if(n.get_Uncle()!=null)
@@ -269,6 +308,7 @@ namespace Slownik
                 insert_repair(n.get_Grandparent());
             }
         }
+
         private void insert_c4(Node n){
             Node p = n.get_Parent(),
                  g = n.get_Grandparent();
@@ -290,6 +330,7 @@ namespace Slownik
             p.black = true;
             g.black = false;
         }
+
         internal override void dodaj_element_z_kluczem(K key, V val){
             size++;
             Node n = new Node(key, val);
@@ -299,6 +340,7 @@ namespace Slownik
             while (root.get_Parent() != null)
                 root = root.get_Parent();
         }
+
         internal Node find_node_with_key(K k){
             Node h = root;
             while (h!=null&&h.key.CompareTo(k) != 0){
@@ -311,9 +353,11 @@ namespace Slownik
                 throw new System.ArgumentException("Brak w słowniku"+k.ToString());
             return h;
         }
+
         internal override V znajdz_element_z_kluczem(K k){
             return find_node_with_key(k).val;
         }
+
         internal override void usun_element_z_kluczem(K k){
             Node n = find_node_with_key(k),
                  te = n;
@@ -362,10 +406,12 @@ namespace Slownik
                     n.Rson = null;
             }
         }
+
         internal void delete_c1(Node n){
             if (n.get_Parent() != null)
                 delete_c2(n);
         }
+
         internal void delete_c2(Node n){
             Node s = n.get_Sibling();
             if (!s.black){
@@ -378,6 +424,7 @@ namespace Slownik
             }
             delete_c3(n);
         }
+
         internal void delete_c3(Node n){
             Node s = n.get_Sibling();
             if (n.Parent.black && s.black && s.Lson.black && s.Rson.black){
@@ -386,6 +433,7 @@ namespace Slownik
             } else
                 delete_c4(n);
         }
+
         internal void delete_c4(Node n){
             Node s = n.get_Sibling();
             if (!n.Parent.black && s.black && s.Lson.black && s.Rson.black){
@@ -394,6 +442,7 @@ namespace Slownik
             } else
                 delete_c5(n);
         }
+
         internal void delete_c5(Node n){
             Node s = n.get_Sibling();
             if (n == n.Parent.Lson && s.Rson.black && !s.Lson.black){
@@ -407,6 +456,7 @@ namespace Slownik
             }
             delete_c6(n);
         }
+
         internal void delete_c6(Node n){
             Node s = n.get_Sibling();
             s.black = n.Parent.black;
@@ -418,13 +468,16 @@ namespace Slownik
                 n.Parent.rotate_right();
             }
         }
+
         internal override int liczba_elementow(){
             return size;
         }
+
         internal override void wypisz_caly_slownik(){
             recursion_print(root,"");
             Console.WriteLine("\nWypisany");
         }
+
         internal void recursion_print(Node n,string h){
             if (n == null)
                 return;
@@ -444,6 +497,7 @@ namespace Slownik
                 recursion_print(n.Rson,h+"  ");
             }
         }
+
         internal override void zmien_wartosc(K key, V val){
             Node h = find_node_with_key(key);
             h.val = val;

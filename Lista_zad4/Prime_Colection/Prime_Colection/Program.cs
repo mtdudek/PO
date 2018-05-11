@@ -1,9 +1,10 @@
-﻿// Maciej Dudek
-// Pracownia PO, czwartek, s.108
-// L4, z1 Słownik
-// Słownik_test
-// Słownik.dll
-// 2018-04-12
+﻿//////////////////////////////
+//  Programowanie Obiektowe //
+//  Maciej Tomasz Dudek     //
+//  Nr. indeksu 299168      //
+//  Pracownia 4             //
+//  Zadanie 3-Primes        //
+//////////////////////////////
 using System;
 using System.Collections;
 
@@ -16,10 +17,12 @@ namespace Prime_Colection
             return new PrimeEnum();
         }
     }
+
     //Iterator kolekcji
     class PrimeEnum : IEnumerator{
         int p;
         public PrimeEnum() { p = 1; }
+
         //Funkcja która ustala nowe p i jeśli
         //jest to nie możliwe zwraca false
         public bool MoveNext(){
@@ -43,12 +46,14 @@ namespace Prime_Colection
                 return false;
             }
         }
+
         //Podaje p
         public object Current{
             get{
                 return p;
             }
         }
+
         //Resetuje p
         public void Reset(){
             p = 1;

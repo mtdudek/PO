@@ -10,18 +10,21 @@ using System.Collections.Generic;
 
 public class ListaLeniwa{
     protected List<int> list = new List<int>();
+
     public int element(int x){
         for (int i = list.Count + 1; i <= x; i++){
             list.Add(i);
         }
         return x;
     }
+
     public int size(){
         return list.Count;
     }
 }
 
 public class Pierwsze : ListaLeniwa{
+
     public new int element(int x){
         if (list.Count >= x) return list[x];
         for (int i = 2; ; i++){
@@ -42,6 +45,7 @@ public class Pierwsze : ListaLeniwa{
 
 
 public class MojProgram{
+
     public static void Main(){
         ListaLeniwa lista = new ListaLeniwa();
 
