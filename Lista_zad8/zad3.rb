@@ -1,8 +1,16 @@
+#//////////////////////////////
+#//  Programowanie Obiektowe //
+#//  Maciej Tomasz Dudek     //
+#//  Nr. indeksu 299168      //
+#//  Pracownia 8             //
+#//  Zadanie 3-Szyfrowanie   //
+#//////////////////////////////
 class Jawna
  def initialize(tekst)
   @tekst=tekst
   @roz = tekst.size
-  end
+ end
+ 
  def zaszyfruj(kod)
   r =Random.new(kod)
   arry1=Array.new()
@@ -23,6 +31,7 @@ class Jawna
   end
   Zaszyfrowane.new(tekst_u)
  end
+ 
  def tekst()
   print @tekst
  end
@@ -32,7 +41,8 @@ class Zaszyfrowane
  def initialize(tekst)
   @tekst=tekst
   @roz = tekst.size
-  end
+ end
+ 
  def odszyfruj(kod)
   r =Random.new(kod)
   arry1=Array.new()
@@ -53,6 +63,7 @@ class Zaszyfrowane
   end
   Jawna.new(tekst_j)
  end
+ 
  def tekst()
   print @tekst
  end

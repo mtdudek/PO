@@ -1,3 +1,10 @@
+#//////////////////////////////
+#//  Programowanie Obiektowe //
+#//  Maciej Tomasz Dudek     //
+#//  Nr. indeksu 299168      //
+#//  Pracownia 9             //
+#//  Zadanie 2-Funkcja 2arg  //
+#//////////////////////////////
 class Funkcja2
   @@krok_c = 0.0002
 
@@ -11,10 +18,14 @@ class Funkcja2
     end
   end
   
+  #wartość funkcji w punkcie x,y 
   def value(x,y)
     @fun.call(x,y)
   end
 
+  #objętość pod wykresem funkcji 
+  #oś OX od a do b
+  #oś OY od c do d
   def objetosc(a,b,c,d)
     odp=0
     
@@ -39,7 +50,8 @@ class Funkcja2
     
 	odp
   end
-
+	
+  #ustawienie tolerancji różnicy wysokości
   def tol_wys=(tol)
     if tol.is_a?(Float)
       @tol_wys = tol
@@ -48,6 +60,7 @@ class Funkcja2
     end
   end
 
+  #ustawienie kroku poziomicy
   def krok_poz=(krok)
     if krok.is_a?(Float)
       @krok_poz = krok
@@ -56,6 +69,10 @@ class Funkcja2
     end
   end
 
+  #wylicznie punktów (x,y) w których wartość funkcji jest równa wysokości
+  #z dokłdnością tol_wys i krokiem krok_poz
+  #oś OX od a do b
+  #oś OY od c do d
   def poziomica(a,b,c,d,wysokosc)
     odp=Array.new()
     a -= @krok_poz

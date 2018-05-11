@@ -1,3 +1,10 @@
+#//////////////////////////////
+#//  Programowanie Obiektowe //
+#//  Maciej Tomasz Dudek     //
+#//  Nr. indeksu 299168      //
+#//  Pracownia 9             //
+#//  Zadanie 1-Funkcja 1arg  //
+#//////////////////////////////
 class Funkcja
   @fun
   @@e =0.000000000001
@@ -26,14 +33,17 @@ class Funkcja
     end
   end
   
+  #wartość funkcji w punkcie x 
   def value(x)
     @fun.call(x)
   end
   
+  #pochodna funkcji w punkcie x 
   def poch(x)
     (self.value(x+@@e) - self.value(x)) / @@e
   end 
   
+  #pole pod wykresem funkcji od a do b
   def pole (a,b)
     odp = 0
     
@@ -51,6 +61,7 @@ class Funkcja
 	odp
   end
   
+  #miejsca zerowe funkcji na przedziale od a do b z dokładnością e
   def zerowe (a,b,e)
     t = Array.new()
     odp = Array.new()

@@ -1,3 +1,10 @@
+#//////////////////////////////
+#//  Programowanie Obiektowe //
+#//  Maciej Tomasz Dudek     //
+#//  Nr. indeksu 299168      //
+#//  Pracownia 8             //
+#//  Zadanie 1-Liczby        //
+#//////////////////////////////
 class Fixnum
   @@slowaspecjalne = {
       0 => "zero", 1 => "jeden", 2 => "dwa", 3 => "trzy", 4 => "cztery",
@@ -12,6 +19,7 @@ class Fixnum
       1000 => "tysiac", 2000 => "tysiace", 5000=> "tysiecy",
       1000000 => "milion", 2000000 => "miliony", 5000000 => "milionow",
       1000000000 => "miliard", 2000000000 => "miliardy", 5000000000 => "miliardow"}
+  
   def czynniki
     arry1=Array.new()
     1.upto(self) do |x|
@@ -21,6 +29,7 @@ class Fixnum
     end
     arry1
   end
+  
   def ack(m)
     if self == 0
       m+1
@@ -30,6 +39,7 @@ class Fixnum
       (self -1).ack(self.ack(m-1))
     end 
   end
+  
   def doskonala
     dzi=Array.new()
     dzi=self.czynniki
@@ -38,6 +48,7 @@ class Fixnum
     dzi.each{|x| i+=x}
     i == self
   end
+  
   def slownie
     if (self >= 1000000000000)
       print "Poza zakresem\n"
