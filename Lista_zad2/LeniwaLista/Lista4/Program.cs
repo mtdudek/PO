@@ -1,5 +1,10 @@
-﻿//Maciej Dudek
-//indeks: 299186
+//////////////////////////////
+//  Programowanie Obiektowe //
+//  Maciej Tomasz Dudek     //
+//  Nr. indeksu 299168      //
+//  Pracownia 2             //
+//  Zadanie 4-LeniwaLista   //
+//////////////////////////////
 using System;
 using System.Collections.Generic;
 
