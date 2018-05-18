@@ -1,3 +1,10 @@
+#/////////////////////////////////
+#//  Programowanie Obiektowe    //
+#//  Maciej Tomasz Dudek        //
+#//  Nr. indeksu 299168         //
+#//  Pracownia 10               //
+#//  Zadanie 1-Kolekcje i sort  //
+#/////////////////////////////////
 class Kolekcja
 
   @inner

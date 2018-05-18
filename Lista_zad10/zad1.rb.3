@@ -81,6 +81,7 @@ class Sortowanie
     if self.kolekcja?(i)
       @kolekcja_to_sort=i
       self.quick_sort(0,i.length-1)
+      @kolekcja_to_sort
     else
       print "Nie jest kolekcja!!"
     end
@@ -91,6 +92,7 @@ class Sortowanie
     if self.kolekcja?(i)
       @kolekcja_to_sort=i
       self.merge_sort(0,i.length-1)
+      @kolekcja_to_sort
     else
       print "Nie jest kolekcja!!"
     end

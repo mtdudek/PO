@@ -76,6 +76,22 @@ class Sortowanie
     end
   end
   
+  # sortowanie bouble-sort implementacja
+  # p-poczatek sortowanego przedzialu
+  # k-koniec sortowanego przedzialu
+  def bouble_sort(p,k)
+    posortowane=false
+    while not posortowane
+      posortowane=true
+      0.upto(@kolekcja_to_sort.length-2) do |x|
+        if @kolekcja_to_sort.get(x) > @kolekcja_to_sort.get(x+1)
+          @kolekcja_to_sort.swap(x,x+1)
+          posortowane=false
+        end
+      end
+    end
+  end
+  
   # sortowanie quick-sort
   def sort1(i)
     if self.kolekcja?(i)
@@ -87,11 +103,11 @@ class Sortowanie
     end
   end
 
-  # sortowanie przez scalanie
+  # sortowanie bombelkowe
   def sort2(i)
     if self.kolekcja?(i)
       @kolekcja_to_sort=i
-      self.merge_sort(0,i.length-1)
+      self.bouble_sort(0,i.length-1)
       @kolekcja_to_sort
     else
       print "Nie jest kolekcja!!"

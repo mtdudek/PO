@@ -115,3 +115,25 @@ class Sortowanie
   end
 
 end 
+  
+r =Random.new()
+a=Array.new()
+
+k1=Kolekcja.new()
+k2=Kolekcja.new()
+
+s=Sortowanie.new()
+
+0.upto(10000) do |x|
+  temp=r.rand(100000)
+  a.push(temp)
+  k1.add(temp)
+  k2.add(temp)
+end
+
+require 'benchmark'
+
+Benchmark.bm(7) do |x|
+  x.report("quick:")  {s.sort1(k1)}
+  x.report("boulbe:") {s.sort2(k2)}
+end
