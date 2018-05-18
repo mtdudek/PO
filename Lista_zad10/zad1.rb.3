@@ -1,3 +1,10 @@
+#/////////////////////////////////
+#//  Programowanie Obiektowe    //
+#//  Maciej Tomasz Dudek        //
+#//  Nr. indeksu 299168         //
+#//  Pracownia 10               //
+#//  Zadanie 1-Kolekcje i sort  //
+#/////////////////////////////////
 class Kolekcja
 
   @inner
@@ -76,6 +83,22 @@ class Sortowanie
     end
   end
   
+  # sortowanie bouble-sort implementacja
+  # p-poczatek sortowanego przedzialu
+  # k-koniec sortowanego przedzialu
+  def bouble_sort(p,k)
+    posortowane=false
+    while not posortowane
+      posortowane=true
+      0.upto(@kolekcja_to_sort.length-2) do |x|
+        if @kolekcja_to_sort.get(x) > @kolekcja_to_sort.get(x+1)
+          @kolekcja_to_sort.swap(x,x+1)
+          posortowane=false
+        end
+      end
+    end
+  end
+  
   # sortowanie quick-sort
   def sort1(i)
     if self.kolekcja?(i)
@@ -87,11 +110,11 @@ class Sortowanie
     end
   end
 
-  # sortowanie przez scalanie
+  # sortowanie bombelkowe
   def sort2(i)
     if self.kolekcja?(i)
       @kolekcja_to_sort=i
-      self.merge_sort(0,i.length-1)
+      self.bouble_sort(0,i.length-1)
       @kolekcja_to_sort
     else
       print "Nie jest kolekcja!!"
@@ -99,3 +122,29 @@ class Sortowanie
   end
 
 end 
+  
+r =Random.new()
+a=Array.new()
+
+k1=Kolekcja.new()
+k2=Kolekcja.new()
+
+s=Sortowanie.new()
+
+0.upto(100000) do |x|
+  temp=r.rand(10000)
+  a.push(temp)
+  k1.add(temp)
+  k2.add(temp)
+end
+
+0.upto(a.length-1) do |x|
+  print a[x]," "
+end
+
+require 'benchmark'
+
+Benchmark.bm(7) do |x|
+  x.report("quick:")  {s.sort1(k1)}
+  x.report("boulbe:") {s.sort2(k2)}
+end

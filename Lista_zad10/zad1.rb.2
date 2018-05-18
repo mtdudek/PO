@@ -1,3 +1,10 @@
+#/////////////////////////////////
+#//  Programowanie Obiektowe    //
+#//  Maciej Tomasz Dudek        //
+#//  Nr. indeksu 299168         //
+#//  Pracownia 10               //
+#//  Zadanie 1-Kolekcje i sort  //
+#/////////////////////////////////
 class Kolekcja
 
   @inner
@@ -115,3 +122,29 @@ class Sortowanie
   end
 
 end 
+  
+r =Random.new()
+a=Array.new()
+
+k1=Kolekcja.new()
+k2=Kolekcja.new()
+
+s=Sortowanie.new()
+
+0.upto(50000) do |x|
+  temp=r.rand(10000)
+  a.push(temp)
+  k1.add(temp)
+  k2.add(temp)
+end
+
+0.upto(a.length-1) do |x|
+  print a[x]," "
+end
+
+require 'benchmark'
+
+Benchmark.bm(7) do |x|
+  x.report("quick:")  {s.sort1(k1)}
+  x.report("boulbe:") {s.sort2(k2)}
+end

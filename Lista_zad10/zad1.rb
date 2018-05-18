@@ -132,7 +132,7 @@ k2=Kolekcja.new()
 s=Sortowanie.new()
 
 0.upto(10000) do |x|
-  temp=r.rand(100000)
+  temp=r.rand(10000)
   a.push(temp)
   k1.add(temp)
   k2.add(temp)
